@@ -1,0 +1,20 @@
+runner:
+  name: IP to Nslookup PTR
+  description: Queries via Nslookup PTR for the provided IP address.
+  version: 0.0.1
+
+build:
+  commands: |
+    echo "START: Building the runner"
+    sudo apt update
+    sudo apt install -y dnsutils
+    echo "END: Building the runner"
+
+webform:
+  - name: ip_address
+    prompt: IP Address
+    type: text
+
+launch:
+  type: binary
+  command: nslookup -type=PTR ${ip_address}
