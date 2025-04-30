@@ -6,8 +6,8 @@ runner:
 build:
   commands: |
     echo "START: Building the runner"
-    sudo apt update
-    sudo apt install -y dnsutils
+    apt update
+    apt install -y dnsutils
     echo "END: Building the runner"
 
 webform:
